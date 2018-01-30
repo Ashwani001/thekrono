@@ -7,7 +7,7 @@
 
 // jQuery to collapse the navbar on scroll
 $(window).scroll(function() {
-    if ($(".navbar").offset().top > 50) {
+    if ($(".navbar").offset().top > 0) {
         $(".navbar-fixed-top").addClass("top-nav-collapse");
     } else {
         $(".navbar-fixed-top").removeClass("top-nav-collapse");
@@ -30,19 +30,20 @@ $('.navbar-collapse ul li a').click(function() {
     $('.navbar-toggle:visible').click();
 });
 
+
 // Google Maps Scripts
 // When the window has finished loading create our google map below
-//commented by ash//google.maps.event.addDomListener(window, 'load', init);
+google.maps.event.addDomListener(window, 'load', init);
 
-function init() {/*
+function init() {
     // Basic options for a simple Google Map
     // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
     var mapOptions = {
         // How zoomed in you want the map to start at (always required)
-        zoom: 15,
+        zoom: 4,
 
         // The latitude and longitude to center the map (always required)
-        center: new google.maps.LatLng(1.342874, 103.67941), // New York
+        center: new google.maps.LatLng(13.7563, 100.5018),
 
         // Disables the default Google Maps UI components
         disableDefaultUI: true,
@@ -170,10 +171,24 @@ function init() {/*
 
     // Custom Map Marker Icon - Customize the map-marker.png file to customize your icon
     var image = 'img/map-marker.png';
-    var myLatLng = new google.maps.LatLng(1.342874, 103.67941);
     var beachMarker = new google.maps.Marker({
-        position: myLatLng,
+        position: new google.maps.LatLng(1.3, 103.8),//Sg
         map: map,
         icon: image
-    });*/
+    });
+    var beachMarker_2 = new google.maps.Marker({
+        position: new google.maps.LatLng(3.09, 101.41),//KL
+        map: map,
+        icon: image
+    });
+    var beachMarker_3 = new google.maps.Marker({
+        position: new google.maps.LatLng(5.25, 100.15),//Penang
+        map: map,
+        icon: image
+    });
+    var beachMarker_4 = new google.maps.Marker({
+        position: new google.maps.LatLng(18.975, 72.8258),//Mumbai
+        map: map,
+        icon: image
+    });
 }
